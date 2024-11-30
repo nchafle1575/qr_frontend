@@ -1,8 +1,16 @@
-<div *ngFor="let item of menu">
+<!-- <div *ngFor="let item of menu">
     <h2>{{ item.name }}</h2>
     <p>{{ item.description }}</p>
     <p>Price: ${{ item.price }}</p>
     <img [src]="item.image" alt="{{ item.name }}" width="200" />
     <button (click)="viewInAR(item.modelUrl)">View in AR</button>
+  </div>
+   -->
+
+
+   <div *ngFor="let item of menuItems">
+    <h2>{{ item.name }}</h2>
+    <p>{{ item.description }}</p>
+    <p>Price: ${{ item.price }}</p>
   </div>
   
