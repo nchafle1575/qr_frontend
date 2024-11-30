@@ -14,11 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
     ArViewComponent
   ],
   imports: [
-    HttpClientModule,
+    
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
