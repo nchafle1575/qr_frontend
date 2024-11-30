@@ -14,9 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
     ArViewComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

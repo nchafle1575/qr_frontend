@@ -1,32 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-interface MenuItem {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  modelUrl: string;
-}
+import { MenuService } from './menu.service';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  menu: MenuItem[] = []; // Specify the type of the array
+  menuItems: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
-    this.http.get<MenuItem[]>('http://localhost:3000/menu').subscribe((data) => {
-      this.menu = data;
-    });
-  }
-
-  viewInAR(modelUrl: string): void {
-    window.location.href = `/ar-view?modelUrl=${encodeURIComponent(modelUrl)}`;
+    // Fetch menu data from backend
+    this.menuService.getMenu().subscribe(
+      (data) => {
+        this.menuItems = data;
+      },
+      (error) => {
+        console.error('Error fetching menu:', error);
+      }
+    );
   }
 }
