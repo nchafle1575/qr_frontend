@@ -5,6 +5,7 @@ import { ArViewComponent } from './ar-view/ar-view.component';
 
 const routes: Routes = [
   { path: '', component: MenuComponent },
+  { path: 'menu', component: MenuComponent },
   { path: 'ar-view', component: ArViewComponent }
 ];
 
